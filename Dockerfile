@@ -1,6 +1,6 @@
 ARG BUILD_DIR=/build
 
-FROM mikrosk/m68k-atari-mint-base:master as build
+FROM mikrosk/m68k-atari-mint-base:master as base
 RUN apt -y update
 RUN apt -y install make wget
 
@@ -23,4 +23,4 @@ FROM scratch
 # renew the arguments
 ARG BUILD_DIR
 
-COPY --from=build ${BUILD_DIR} /
+COPY --from=base ${BUILD_DIR} /
