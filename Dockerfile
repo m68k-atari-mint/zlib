@@ -1,8 +1,6 @@
 ARG BUILD_DIR=/build
 
 FROM mikrosk/m68k-atari-mint-base:master as base
-RUN apt -y update
-RUN apt -y install make wget
 
 WORKDIR /src
 COPY build.sh .
